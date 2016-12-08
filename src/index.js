@@ -10,11 +10,14 @@ import routes from "./core/routes.jsx";
 import {Router, browserHistory} from "react-router";
 import thunk from "redux-thunk";
 import DataBaseReducer from "./core/reducers/DataBaseReducer.jsx";
+import  TasksChangedReducer  from "./core/reducers/TasksChangedReducer";
+import {dataBaseShared} from "./core/Services/DataBase.jsx";
 
 const reducers = {
     authReducer: AuthReducer,
     createTaskReducer: CreateTaskReducer,
     dataBaseReducer: DataBaseReducer,
+    taskChangesReducer: TasksChangedReducer,
     form: formReducer
 };
 const reducer = combineReducers(reducers);
@@ -31,6 +34,7 @@ store.subscribe(()=>{
     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 });
 
+dataBaseShared.setStore(store);
 
 render(
     <Provider store={store}>

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FloatingButton from '../views/FloatingButton'
 import BottomTabBar from './BottomTabBar'
 import {browserHistory} from "react-router";
+import TasksTable from "./TasksTable";
 
 class Dashboard extends Component {
 
@@ -12,7 +13,9 @@ class Dashboard extends Component {
     render() {
         return (
         <div style={{width:"100%",  height: 300}}>
-            <div style={{width:"100%",  height: "100%"}}></div>
+            <div style={{width:"100%",  height: "100%"}}>
+                <TasksTable />
+            </div>
             <FloatingButton onClick={this.onFloatingButtonClick} />
             <BottomTabBar />
         </div>

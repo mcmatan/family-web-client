@@ -11,6 +11,7 @@ const AuthReducer = (state = [], action) => {
             return Object.assign({}, state, {
                 isLoggedIn: true,
                 loginError: ""
+
             });
         case SIGN_IN_SUBMIT:
             return Object.assign({}, state, {

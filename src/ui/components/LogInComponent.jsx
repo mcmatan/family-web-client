@@ -23,11 +23,23 @@ class LogInComponent extends Component {
 
         return (
             <form onSubmit={handleSubmit((values) => dispatch(authServiceShared.login(values))) }>
-                <Field name="username" component={TextField} hintText="User name" floatingLabelText="User name" />
-                <Field name="password" component={TextField} hintText="Password" floatingLabelText="Password" type="password" />
-                {loginError && <strong>{loginError}</strong>}
-                <div>
-                    <RaisedButton label="Login" style={style} type="Submit" />
+                <div style={{paddingTop:20}}>
+                <div id="wrapper" style={{textAlign: "center"}}>
+                    <Field name="username" component={TextField} hintText="User name" floatingLabelText="User name"
+                           style={{display: "inline-block"}}/>
+                </div>
+                <div id="wrapper" style={{textAlign: "center"}}>
+                    <Field name="password" component={TextField} hintText="Password" floatingLabelText="Password"
+                           type="password"/>
+                </div>
+
+                <div id="wrapper" style={{textAlign: "center"}}>
+                    {loginError && <strong>{loginError}</strong>}
+                </div>
+
+                <div id="wrapper" style={{textAlign: "center" ,paddingTop:20}}>
+                    <RaisedButton label="Login" style={style} type="Submit"/>
+                </div>
                 </div>
             </form>
         )

@@ -1,8 +1,7 @@
-import {firebaseApp} from '../firebase/firebase';
+import {firebaseApp} from "../firebase/firebase";
 import {signInSuccess, signInError, loginSubmit, signInSuccessAndRoute, logout} from "../actions/AuthActions";
 import {dataBaseShared} from "./DataBase";
 const firebaseAuth = firebaseApp.auth();
-import {reset} from 'redux-form';
 
 
 class AuthService {

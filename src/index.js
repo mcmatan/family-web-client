@@ -17,7 +17,7 @@ const reducers = {
     authReducer: AuthReducer,
     createTaskReducer: CreateTaskReducer,
     dataBaseReducer: DataBaseReducer,
-    taskChangesReducer: TasksChangedReducer,
+    tasksChangedReducer: TasksChangedReducer,
     form: formReducer
 };
 const reducer = combineReducers(reducers);

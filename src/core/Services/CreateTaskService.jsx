@@ -1,4 +1,4 @@
-import TaskType from "../../Model/TaskType";
+import TaskType from "../../model/TaskType";
 import {
     pickedType,
     selectedDay,
@@ -9,7 +9,7 @@ import {
 } from "../actions/CreateTaskActions";
 import {dataBaseShared} from "./DataBase";
 import Moment from "moment";
-import Days from "../../Model/Days";
+import Days from "../../model/Days";
 class CreateTaskService {
 
     selectedTaskType(index) {
@@ -48,9 +48,10 @@ class CreateTaskService {
 
         task.kTaskType = createTaskReducer.selectedTaskType.key;
         task.uid = uid;
+        task.task.taskTypeDisplay = uid;
 
-        const repeatOnDates = this.repeateOnDays(createTaskReducer);
-        task.repeateOnDates = repeatOnDates;
+        const repeatOnDays = this.repeateOnDays(createTaskReducer);
+        task.repeateOnDates = repeatOnDays;
 
         dataBaseShared.saveTask(task);
 
@@ -61,42 +62,42 @@ class CreateTaskService {
 
     repeateOnDays(createTaskReducer) {
         const timesFilterdWithNoNull = createTaskReducer.dates.filter(function (n) {
-            return n != undefined
+            return n !== undefined
         });
         const timesStrings = timesFilterdWithNoNull.map(function (dateString) {
             const date = new Date(dateString);
             return Moment(date).format('HH:mm');
         });
 
-        let repeatOnDates = {};
+        let repeatOnDays = {};
         if (createTaskReducer[Days.sunday]) {
-            repeatOnDates[Days.sunday] = timesStrings;
+            repeatOnDays[Days.sunday] = timesStrings;
         }
 
         if (createTaskReducer[Days.monday]) {
-            repeatOnDates[Days.monday] = timesStrings;
+            repeatOnDays[Days.monday] = timesStrings;
         }
 
         if (createTaskReducer[Days.tuesday]) {
-            repeatOnDates[Days.tuesday] = timesStrings;
+            repeatOnDays[Days.tuesday] = timesStrings;
         }
 
         if (createTaskReducer[Days.wednesday]) {
-            repeatOnDates[Days.wednesday] = timesStrings;
+            repeatOnDays[Days.wednesday] = timesStrings;
         }
 
         if (createTaskReducer[Days.thursday]) {
-            repeatOnDates[Days.thursday] = timesStrings;
+            repeatOnDays[Days.thursday] = timesStrings;
         }
 
         if (createTaskReducer[Days.friday]) {
-            repeatOnDates[Days.friday] = timesStrings;
+            repeatOnDays[Days.friday] = timesStrings;
         }
 
         if (createTaskReducer[Days.saturday]) {
-            repeatOnDates[Days.saturday] = timesStrings;
+            repeatOnDays[Days.saturday] = timesStrings;
         }
-        return repeatOnDates
+        return repeatOnDays
     }
 }
 
@@ -105,7 +106,7 @@ function generateUUID() {
     var uuid = 'xxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = (d + Math.random() * 16) % 16 | 0;
         d = Math.floor(d / 16);
-        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
     return uuid;
 };

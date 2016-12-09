@@ -1,6 +1,8 @@
 import {firebaseApp} from "../firebase/firebase";
-import React, {Component} from "react";
+import {Component} from "react";
 import {tasksUpdated} from "../actions/TasksChangedActions";
+import Task from "../../model/Task";
+
 const firebaseDb = firebaseApp.database();
 
 class DataBase extends Component {
@@ -36,7 +38,12 @@ class DataBase extends Component {
     listenToTasksChanges() {
         const self = this;
         this.tasksRef.on('value', function(snapshot) {
-            self.store.dispatch(tasksUpdated(snapshot.val()));
+            const dic = snapshot.val();
+
+            const keys = Object.keys(dic);
+            const values = keys.map(function(v) { return new Task(dic[v]); });
+
+            self.store.dispatch(tasksUpdated(values));
         });
     }
 

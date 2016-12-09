@@ -9,7 +9,7 @@ const Days = {
 
 
     all() {
-        return [Days.sunday, Days.monday, Days.tuesday, Days.wednesday, Days.thursday, Days.friday, Days.saturday];
+        return [this.sunday, this.monday, this.tuesday, this.wednesday, this.thursday, this.friday, this.saturday];
     }
 };
 

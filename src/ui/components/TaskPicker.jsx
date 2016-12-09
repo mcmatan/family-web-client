@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import Avatar from "material-ui/Avatar";
-import Subheader from "material-ui/Subheader";
-import TaskType, {getAllTasksTypes} from "../../Model/TaskType";
+import TaskType from "../../model/TaskType";
 import {createTaskServiceShared} from "../../core/Services/CreateTaskService";
 import {connect} from "react-redux";
 

@@ -3,7 +3,7 @@ const TasksChangedReducer = (state = [], action) => {
   switch (action.type) {
       case TASK_CHANGES_TASKS_UPDATED:
           return Object.assign({}, state, {
-              allTasks: action.payload
+              tasks: action.payload
           });
       default:
           return state;

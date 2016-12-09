@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from 'material-ui/Checkbox';
-import Days from "../../Model/Days";
+import Days from "../../model/Days";
 import {connect} from "react-redux";
 import {createTaskServiceShared} from "../../core/Services/CreateTaskService";
 
@@ -13,11 +13,11 @@ const styles = {
     },
 };
 
-String.prototype.capitalizeFirstLetter = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
-
 class DayPicker extends Component {
+
+    capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
 
     onChecked = (key, event, checked) => {
         this.props.dispatch(createTaskServiceShared.daySelected(key, checked));
@@ -33,7 +33,7 @@ class DayPicker extends Component {
             let isSelected = self.props.selectedDays[text];
             return (
                 <Checkbox
-                    label={text.capitalizeFirstLetter()}
+                    label={self.capitalizeFirstLetter(text)}
                     style={styles.checkbox}
                     key={text}
                     checked={isSelected}

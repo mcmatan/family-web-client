@@ -11,24 +11,11 @@ let SelectableList = makeSelectable(List);
 
 function wrapState(ComposedComponent) {
     return class SelectableList extends Component {
-
-        componentWillMount() {
-            this.setState({
-                selectedIndex: this.props.defaultValue,
-            });
-        }
-
-        handleRequestChange = (event, index) => {
-            this.setState({
-                selectedIndex: index,
-            });
-        };
-
         render() {
             return (
                 <ComposedComponent
-                    value={this.state.selectedIndex}
-                    onChange={this.handleRequestChange}
+                    value={this.props.selectedValue}
+                    onChange={this.props.onSelect}
                 >
                     {this.props.children}
                 </ComposedComponent>
@@ -41,33 +28,46 @@ SelectableList = wrapState(SelectableList);
 
 class TasksTable extends Component {
 
-    render() {
+    state = {
+        selectedIndex: -1
+    };
 
-        const rows = this.props.tasks.map(function (task) {
+    render() {
+        const self = this;
+        const rows = this.props.tasks.map(function (task, index) {
             return (
-                <div key={task.uid + "wdwd"}>
                     <ListItem
-                        leftAvatar={<Avatar src={task.taskType.src}/>}
                         primaryText={task.taskType.display}
                         key={task.uid}
                         secondaryTextLines={2}
-                        nestedItems={[
-                            <ListItem
-                                value={2}
-                                children={<DayPicker />}
-                            />,
-                        ]}
+                        open={self.state.selectedIndex === index}
+                        value={index}
+                        style={{textAlign: "center"}}
+                        children={<Avatar src={task.taskType.src} key={task.uid}/>}
                     />
-                    <Divider inset={true}/>
-                </div>
             )
         });
 
         return (
-                <SelectableList defaultValue={3}>
-                    <Subheader>Tasks</Subheader>
+                <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect} >
+                    <Subheader style={{textAlign: "center"}}>Tasks</Subheader>
                     {rows}
                 </SelectableList>
+        );
+    }
+
+    onSelect = (value, index) => {
+
+        if (this.state.selectedIndex === index) {
+            this.setSelectedIndex(-1);
+        } else{
+            this.setSelectedIndex(index);
+        }
+    };
+
+    setSelectedIndex(index) {
+        this.setState(
+            {selectedIndex:index}
         );
     }
 }

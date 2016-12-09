@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35bd12ed-4854-4224-8099-f20e20c06e76" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/components/EditTask.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" afterPath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx" afterPath="$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,13 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TasksTable.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TasksTable.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/components/TasksTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="389">
+              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateTaskService.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,16 +105,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddTask.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/components/AddTask.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Dashboard.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/components/Dashboard.jsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,6 +163,7 @@
       <find>onSelect</find>
       <find>makeS</find>
       <find>uid: null,         repeatOnDays: null</find>
+      <find>taskTypeDisplay</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/ui/components/TaskPicker.jsx" />
         <option value="$PROJECT_DIR$/src/Model/TaskType.jsx" />
         <option value="$PROJECT_DIR$/src/model/Days.jsx" />
-        <option value="$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx" />
         <option value="$PROJECT_DIR$/src/model/TaskType.jsx" />
         <option value="$PROJECT_DIR$/src/core/Services/DataBase.jsx" />
         <option value="$PROJECT_DIR$/src/model/Task.jsx" />
@@ -192,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/ui/components/Dashboard.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/EditTask.jsx" />
+        <option value="$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx" />
       </list>
     </option>
   </component>
@@ -542,12 +543,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481228595486</updated>
       <workItem from="1481228597731" duration="2472000" />
-      <workItem from="1481236315917" duration="20763000" />
+      <workItem from="1481236315917" duration="20984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23235000" />
+    <option name="totallyTimeSpent" value="23456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -791,16 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="104" column="33" lean-forward="true" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Days.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -931,10 +922,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/components/TasksTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="389">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Services/CreateTaskService.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>

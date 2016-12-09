@@ -48,7 +48,6 @@ class CreateTaskService {
 
         task.kTaskType = createTaskReducer.selectedTaskType.key;
         task.uid = uid;
-        task.task.taskTypeDisplay = uid;
 
         const repeatOnDays = this.repeateOnDays(createTaskReducer);
         task.repeateOnDates = repeatOnDays;

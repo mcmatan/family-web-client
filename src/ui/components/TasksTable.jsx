@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import Divider from 'material-ui/Divider';
 import DayPicker from '../views/DayPicker';
-
+import EditTask from './EditTask';
 
 let SelectableList = makeSelectable(List);
 
@@ -15,7 +15,8 @@ function wrapState(ComposedComponent) {
             return (
                 <ComposedComponent
                     value={this.props.selectedValue}
-                    onChange={this.props.onSelect}
+                    onChange={ () => {
+                    }}
                 >
                     {this.props.children}
                 </ComposedComponent>
@@ -32,42 +33,54 @@ class TasksTable extends Component {
         selectedIndex: -1
     };
 
+    children = (task, index) => {
+        const editErea = (
+            <div>
+                <div>{task.taskType.display}</div>
+                <EditTask />
+            </div>
+        );
+        return (<div><Avatar src={task.taskType.src} key={task.uid}/>{index === this.state.selectedIndex && editErea}
+        </div>);
+    };
+
     render() {
         const self = this;
         const rows = this.props.tasks.map(function (task, index) {
             return (
-                    <ListItem
-                        primaryText={task.taskType.display}
-                        key={task.uid}
-                        secondaryTextLines={2}
-                        open={self.state.selectedIndex === index}
-                        value={index}
-                        style={{textAlign: "center"}}
-                        children={<Avatar src={task.taskType.src} key={task.uid}/>}
-                    />
+                <ListItem
+                    primaryText={task.taskType.display}
+                    key={task.uid}
+                    secondaryTextLines={2}
+                    open={self.state.selectedIndex === index}
+                    value={index}
+                    onTouchTap={self.onSelect.bind(this, index)}
+                    style={{textAlign: "center"}}
+                    children={self.children(task, index)}
+                />
             )
         });
 
         return (
-                <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect} >
-                    <Subheader style={{textAlign: "center"}}>Tasks</Subheader>
-                    {rows}
-                </SelectableList>
+            <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect}>
+                <Subheader style={{textAlign: "center"}}>Tasks</Subheader>
+                {rows}
+            </SelectableList>
         );
     }
 
-    onSelect = (value, index) => {
-
+    onSelect = (index, value) => {
+        debugger;
         if (this.state.selectedIndex === index) {
             this.setSelectedIndex(-1);
-        } else{
+        } else {
             this.setSelectedIndex(index);
         }
     };
 
     setSelectedIndex(index) {
         this.setState(
-            {selectedIndex:index}
+            {selectedIndex: index}
         );
     }
 }

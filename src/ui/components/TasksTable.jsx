@@ -4,6 +4,7 @@ import Avatar from "material-ui/Avatar";
 import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import Divider from 'material-ui/Divider';
+import DayPicker from '../views/DayPicker';
 
 
 /*
@@ -67,7 +68,7 @@ SelectableList = wrapState(SelectableList);
 class TasksTable extends Component {
 
     render() {
-        const someDiv = <div key="Im the key" style={{width:"100px", height:"100px"}}>Im a div</div>;
+        const someDiv = <div key="Im the key" style={{width:"100px", height:"100px", textAlign: "center"}}>Im a div</div>;
         return (
                 <SelectableList defaultValue={3}>
                     <Subheader>Selectable Contacts</Subheader>
@@ -80,6 +81,7 @@ class TasksTable extends Component {
                                 value={2}
                                 primaryText="Grace Ng"
                                 leftAvatar={<Avatar src="images/uxceo-128.jpg"/>}
+                                children={<DayPicker />}
                             />,
                         ]}
                     />

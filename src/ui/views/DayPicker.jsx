@@ -21,9 +21,6 @@ class DayPicker extends Component {
 
     onChecked = (key, event, checked) => {
         this.props.dispatch(createTaskServiceShared.daySelected(key, checked));
-        // this.setState(
-        //     {[key]: checked}
-        // );
     };
 
     render() {

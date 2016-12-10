@@ -7,6 +7,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import NavigationBar from "../views/NavigationBar.jsx";
 import {authServiceShared} from "../../core/Services/AuthService.jsx";
+import EditTask from "./EditTask";
 injectTapEventPlugin();
 
 
@@ -41,6 +42,7 @@ class App extends Component {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
+                    <EditTask />
                     {this.props.loggedIn ? (
                         <NavigationBar onTitleTouchTap={this.handleTitleTouch} iconElementRight="Logout"
                                        onClick={this.handleLogoutPress}/>

@@ -40,21 +40,21 @@ export default class EditTask extends React.Component {
         ];
 
         return (
-            <div>
+            <div style={{height:0}}>
                 <RaisedButton label="Dialog" onTouchTap={this.handleOpen} />
                 <Dialog
                     title="Dialog With Actions"
                     actions={actions}
-                    modal={false}
-                    open={this.state.open}
+                    modal={true}
+                    open={true}
                     onRequestClose={this.handleClose}
                 >
                     The actions in this window were passed in as an array of React objects.
+                    <div style={{textAlign: "center"}}>
+                        <DayPicker style={{width: "30%", display: "inline-block"}} />
+                        <TimePicker style={{width: "30%", display: "inline-block"}} />
+                    </div>
                 </Dialog>
-                <div style={{textAlign: "center"}}>
-                    <DayPicker style={{width: "30%", display: "inline-block"}} />
-                    <TimePicker style={{width: "30%", display: "inline-block"}} />
-                </div>
             </div>
         );
     }

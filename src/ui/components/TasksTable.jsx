@@ -6,6 +6,7 @@ import {List, ListItem, makeSelectable} from "material-ui/List";
 import Divider from 'material-ui/Divider';
 import DayPicker from '../views/DayPicker';
 import EditTask from './EditTask';
+import {startEditingTask} from "../../core/actions/EditTasksActions";
 
 let SelectableList = makeSelectable(List);
 
@@ -56,19 +57,24 @@ class TasksTable extends Component {
         });
 
         return (
-            <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect}>
-                <Subheader style={{textAlign: "center"}}>Tasks</Subheader>
-                {rows}
-            </SelectableList>
+            <div>
+                <EditTask />
+                <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect}>
+                    <Subheader style={{textAlign: "center"}}>Tasks</Subheader>
+                    {rows}
+                </SelectableList>
+            </div>
         );
     }
 
     onSelect = (index, value) => {
-        if (this.state.selectedIndex === index) {
-            this.setSelectedIndex(-1);
-        } else {
-            this.setSelectedIndex(index);
-        }
+        this.props.dispatch(startEditingTask(this.props.tasks[index]));
+
+        // if (this.state.selectedIndex === index) {
+        //     this.setSelectedIndex(-1);
+        // } else {
+        //     this.setSelectedIndex(index);
+        // }
     };
 
     setSelectedIndex(index) {

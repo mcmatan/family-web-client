@@ -42,7 +42,6 @@ class App extends Component {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
-                    <EditTask />
                     {this.props.loggedIn ? (
                         <NavigationBar onTitleTouchTap={this.handleTitleTouch} iconElementRight="Logout"
                                        onClick={this.handleLogoutPress}/>

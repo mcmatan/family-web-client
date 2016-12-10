@@ -4,6 +4,8 @@ import TimePicker from '../views/TimesPicker';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import {connect} from "react-redux";
+import {endEditingTask} from "../../core/actions/EditTasksActions";
 
 /**
  * Dialog with action buttons. The actions are passed in as an array of React objects,
@@ -11,7 +13,7 @@ import RaisedButton from 'material-ui/RaisedButton';
  *
  * You can also close this dialog by clicking outside the dialog, or with the 'Esc' key.
  */
-export default class EditTask extends React.Component {
+class EditTask extends React.Component {
     state = {
         open: false,
     };
@@ -21,6 +23,7 @@ export default class EditTask extends React.Component {
     };
 
     handleClose = () => {
+        this.props.dispatch(endEditingTask());
         this.setState({open: false});
     };
 
@@ -41,16 +44,15 @@ export default class EditTask extends React.Component {
 
         return (
             <div style={{height:0}}>
-                <RaisedButton label="Dialog" onTouchTap={this.handleOpen} />
                 <Dialog
                     title="Dialog With Actions"
                     actions={actions}
                     modal={true}
-                    open={true}
+                    open={this.props.isOpen}
                     onRequestClose={this.handleClose}
                 >
                     The actions in this window were passed in as an array of React objects.
-                    <div style={{textAlign: "center"}}>
+                    <div>
                         <DayPicker style={{width: "30%", display: "inline-block"}} />
                         <TimePicker style={{width: "30%", display: "inline-block"}} />
                     </div>
@@ -59,3 +61,12 @@ export default class EditTask extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        isOpen: state.editTaskReducer.editingTask,
+        task: state.editTaskReducer.task
+    }
+}
+
+export default connect(mapStateToProps)(EditTask);

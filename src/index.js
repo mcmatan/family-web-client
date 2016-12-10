@@ -5,6 +5,7 @@ import "./index.css";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import {reducer as formReducer} from "redux-form";
 import AuthReducer from "./core/reducers/AuthReducer.jsx";
+import EditTaskReducer from "./core/reducers/EditTaskReducer";
 import CreateTaskReducer from "./core/reducers/CreateTaskReducer.jsx";
 import routes from "./core/routes.jsx";
 import {Router, browserHistory} from "react-router";
@@ -18,6 +19,7 @@ const reducers = {
     createTaskReducer: CreateTaskReducer,
     dataBaseReducer: DataBaseReducer,
     tasksChangedReducer: TasksChangedReducer,
+    editTaskReducer: EditTaskReducer,
     form: formReducer
 };
 const reducer = combineReducers(reducers);

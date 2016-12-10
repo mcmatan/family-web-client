@@ -34,13 +34,7 @@ class TasksTable extends Component {
     };
 
     children = (task, index) => {
-        const editErea = (
-            <div>
-                <div>{task.taskType.display}</div>
-                <EditTask />
-            </div>
-        );
-        return (<div><Avatar src={task.taskType.src} key={task.uid}/>{index === this.state.selectedIndex && editErea}
+        return (<div><Avatar src={task.taskType.src} key={task.uid}/>
         </div>);
     };
 
@@ -70,7 +64,6 @@ class TasksTable extends Component {
     }
 
     onSelect = (index, value) => {
-        debugger;
         if (this.state.selectedIndex === index) {
             this.setSelectedIndex(-1);
         } else {

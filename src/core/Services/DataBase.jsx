@@ -40,10 +40,13 @@ class DataBase extends Component {
         this.tasksRef.on('value', function(snapshot) {
             const dic = snapshot.val();
 
-            const keys = Object.keys(dic);
-            const values = keys.map(function(v) { return new Task(dic[v]); });
-
-            self.store.dispatch(tasksUpdated(values));
+            if (dic) {
+                const keys = Object.keys(dic);
+                const values = keys.map(function(v) { return new Task(dic[v]); });
+                self.store.dispatch(tasksUpdated(values));
+            } else {
+                console.log("No tasks in data base")
+            }
         });
     }
 

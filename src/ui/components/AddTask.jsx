@@ -1,5 +1,5 @@
 
-import DayPicker from '../views/DayPicker';
+import DayPicker from './DayPicker';
 import TimesPicker from '../views/TimesPicker';
 import TaskPicker from './TaskPicker';
 import React from 'react';

@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-import DayPicker from '../views/DayPicker';
-import TimePicker from '../views/TimesPicker';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import React, {Component} from "react";
+import DaysEdit from "./DaysEdit";
+import TimePicker from "../views/TimesPicker";
+import Dialog from "material-ui/Dialog";
+import FlatButton from "material-ui/FlatButton";
 import {connect} from "react-redux";
 import {endEditingTask} from "../../core/actions/EditTasksActions";
 
@@ -13,6 +12,12 @@ import {endEditingTask} from "../../core/actions/EditTasksActions";
  *
  * You can also close this dialog by clicking outside the dialog, or with the 'Esc' key.
  */
+
+const customContentStyle = {
+    width: '80%',
+    maxWidth: 'none',
+};
+
 class EditTask extends React.Component {
     state = {
         open: false,
@@ -43,18 +48,19 @@ class EditTask extends React.Component {
         ];
 
         return (
-            <div style={{height:0}}>
+            <div style={{height: 0}}>
                 <Dialog
-                    title="Dialog With Actions"
+                    contentStyle={customContentStyle}
+                    title={this.props.isOpen && this.props.task.taskType.display}
                     actions={actions}
                     modal={true}
                     open={this.props.isOpen}
                     onRequestClose={this.handleClose}
+                    autoScrollBodyContent={true}
                 >
-                    The actions in this window were passed in as an array of React objects.
                     <div>
-                        <DayPicker style={{width: "30%", display: "inline-block"}} />
-                        <TimePicker style={{width: "30%", display: "inline-block"}} />
+                        <DaysEdit style={{ display: "inline-block", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
+                        <TimePicker style={{ display: "inline-block", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
                     </div>
                 </Dialog>
             </div>

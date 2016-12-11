@@ -4,7 +4,7 @@ import Avatar from "material-ui/Avatar";
 import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import Divider from 'material-ui/Divider';
-import DayPicker from '../views/DayPicker';
+import DayPicker from './DayPicker';
 import EditTask from './EditTask';
 import {startEditingTask} from "../../core/actions/EditTasksActions";
 

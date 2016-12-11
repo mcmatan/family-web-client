@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35bd12ed-4854-4224-8099-f20e20c06e76" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/Services/EditTaskService.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/components/DaysEdit.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ui/views/DayPicker.jsx" afterPath="$PROJECT_DIR$/src/ui/components/DayPicker.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/views/TimesEdit.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Services/DataBase.jsx" afterPath="$PROJECT_DIR$/src/core/Services/DataBase.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/actions/ActionTypes.jsx" afterPath="$PROJECT_DIR$/src/core/actions/ActionTypes.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/actions/EditTasksActions.jsx" afterPath="$PROJECT_DIR$/src/core/actions/EditTasksActions.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/reducers/EditTaskReducer.jsx" afterPath="$PROJECT_DIR$/src/core/reducers/EditTaskReducer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Task.jsx" afterPath="$PROJECT_DIR$/src/model/Task.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/AddTask.jsx" afterPath="$PROJECT_DIR$/src/ui/components/AddTask.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/EditTask.jsx" afterPath="$PROJECT_DIR$/src/ui/components/EditTask.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" afterPath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionTypes.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/actions/ActionTypes.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TasksChangedReducer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/reducers/TasksChangedReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,11 +54,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditTaskReducer.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditTaskReducer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/reducers/EditTaskReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimesPicker.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/views/TimesPicker.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimesEdit.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/views/TimesEdit.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -112,28 +124,6 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditTask.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/components/EditTask.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Task.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -202,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/core/Services/DataBase.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/DaysEdit.jsx" />
         <option value="$PROJECT_DIR$/src/core/reducers/EditTaskReducer.jsx" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -579,12 +570,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481228595486</updated>
       <workItem from="1481228597731" duration="2472000" />
-      <workItem from="1481236315917" duration="32388000" />
+      <workItem from="1481236315917" duration="32830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34860000" />
+    <option name="totallyTimeSpent" value="35302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -888,16 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/views/TimesPicker.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/views/FloatingButton.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1014,6 +995,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/views/TimesPicker.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/views/TimesEdit.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
         </state>
       </provider>

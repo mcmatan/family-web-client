@@ -1,4 +1,7 @@
-import {EDIT_TASK_START_EDITING, EDIT_TASK_END_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY} from "../actions/ActionTypes";
+import {EDIT_TASK_START_EDITING, EDIT_TASK_END_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY, EDIT_TASK_ADD_TIME,
+    EDIT_TASK_REMOVE_TIME
+    , EDIT_TASK_DATE_CHANGED_AT_INDEX
+} from "../actions/ActionTypes";
 const EditTaskReducer = (state = {editingTask: true}, action) => {
     switch (action.type) {
         case EDIT_TASK_START_EDITING:
@@ -25,6 +28,36 @@ const EditTaskReducer = (state = {editingTask: true}, action) => {
             const after = [...state.days, action.payload];
             return Object.assign({}, state, {
                 days: after
+            });
+        case EDIT_TASK_REMOVE_TIME:
+            debugger;
+            const timesAfterFilter = state.times.filter(function (time) {
+               return (time !== action.payload);
+            });
+            debugger;
+            return Object.assign({}, state, {
+                times: timesAfterFilter
+            });
+        case EDIT_TASK_ADD_TIME:
+            debugger;
+            return Object.assign({}, state, {
+                times: [...state.times, action.payload]
+            });
+        case EDIT_TASK_DATE_CHANGED_AT_INDEX:
+            const index = action.index;
+            const oldDates = state.times;
+            const value = action.payload;
+            let datesAfter = [];
+
+            if (oldDates && oldDates.length > index) {
+                datesAfter = oldDates.slice(0, index).concat([value]).concat(oldDates.slice(index + 1))
+            } else if (state.times) {
+                datesAfter = state.times.concat([action.payload]);
+            } else {
+                datesAfter = [action.payload]
+            }
+            return Object.assign({}, state, {
+                times: datesAfter
             });
         default:
             return state;

@@ -35,6 +35,10 @@ class DataBase extends Component {
         this.tasksRef.child(task.uid).set(task);
     }
 
+    removeTask(task) {
+        this.tasksRef.child(task.uid).remove();
+    }
+
     listenToTasksChanges() {
         const self = this;
         this.tasksRef.on('value', function(snapshot) {

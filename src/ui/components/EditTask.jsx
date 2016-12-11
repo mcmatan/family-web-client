@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {cancelEditingTask} from "../../core/actions/EditTasksActions";
 import {editTaskServiceShared} from "../../core/services/EditTaskService";
 
+
 /**
  * Dialog with action buttons. The actions are passed in as an array of React objects,
  * in this example [FlatButtons](/#/components/flat-button).
@@ -30,6 +31,10 @@ class EditTask extends Component {
         this.setState({open: false});
     };
 
+    handleDeleteTask = () => {
+        this.props.dispatch(editTaskServiceShared.removeTask(this.props.taskBeforeUpdate))
+    };
+
     render() {
         const actions = [
             <FlatButton
@@ -43,6 +48,12 @@ class EditTask extends Component {
                 keyboardFocused={true}
                 onTouchTap={this.handleUpdate}
             />,
+            <FlatButton label="Delete task"
+                        secondary={true}
+                        onTouchTap={this.handleDeleteTask.bind(this)}
+                        style={{
+                float: "left",
+            }} />
         ];
 
         if (!this.props.isOpen) {
@@ -83,6 +94,7 @@ class EditTask extends Component {
 
 function mapStateToProps(state) {
     return {
+        taskBeforeUpdate: state.editTaskReducer.taskBeforeUpdate,
         editTaskReducer: state.editTaskReducer,
         isOpen: state.editTaskReducer.editingTask,
         taskTypeDisplay: state.editTaskReducer.taskTypeDisplay

@@ -1,10 +1,18 @@
 import {Component} from 'react';
-import {dataBaseShared} from "./DataBase";
 import Moment from "moment";
-import {endEditing} from "../actions/EditTasksActions";
+import {endEditing, cancelEditingTask} from "../actions/EditTasksActions";
 import Days from "../../model/Days";
+import {dataBaseShared} from "./DataBase";
 
 class EditTaskService extends Component {
+
+    removeTask(task) {
+        return dispatch => {
+            dataBaseShared.removeTask(task);
+            dispatch(cancelEditingTask());
+        };
+    }
+
     updateTask(editTaskReducer) {
         return dispatch => {
             let taskBeforeUpdate = editTaskReducer.taskBeforeUpdate;

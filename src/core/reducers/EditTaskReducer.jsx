@@ -1,10 +1,10 @@
 import {EDIT_TASK_START_EDITING, EDIT_TASK_END_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY} from "../actions/ActionTypes";
-const EditTaskReducer = (state = [], action) => {
+const EditTaskReducer = (state = {editingTask: true}, action) => {
     switch (action.type) {
         case EDIT_TASK_START_EDITING:
-            debugger;
             return Object.assign({}, state, {
                 editingTask: true,
+                taskTypeDisplay: action.payload.taskType.display,
                 times: action.payload.times,
                 days: action.payload.days,
             });

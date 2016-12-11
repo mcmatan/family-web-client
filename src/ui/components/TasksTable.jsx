@@ -35,7 +35,7 @@ class TasksTable extends Component {
     };
 
     children = (task, index) => {
-        return (<div><Avatar src={task.taskType.src} key={task.uid}/>
+        return (<div key={task.uid}><Avatar src={task.taskType.src} />
         </div>);
     };
 

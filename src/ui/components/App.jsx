@@ -7,7 +7,6 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import NavigationBar from "../views/NavigationBar.jsx";
 import {authServiceShared} from "../../core/Services/AuthService.jsx";
-import EditTask from "./EditTask";
 injectTapEventPlugin();
 
 

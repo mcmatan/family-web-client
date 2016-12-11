@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import DaysEdit from "./DaysEdit";
-import TimePicker from "../views/TimesPicker";
+import TimesEdit from "../views/TimesEdit";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
 import {connect} from "react-redux";
@@ -47,11 +47,15 @@ class EditTask extends React.Component {
             />,
         ];
 
+            if (!this.props.isOpen) {
+                return <div />
+            }
+
         return (
             <div style={{height: 0}}>
                 <Dialog
                     contentStyle={customContentStyle}
-                    title={this.props.isOpen && this.props.task.taskType.display}
+                    title={this.props.isOpen && this.props.taskTypeDisplay}
                     actions={actions}
                     modal={true}
                     open={this.props.isOpen}
@@ -59,8 +63,8 @@ class EditTask extends React.Component {
                     autoScrollBodyContent={true}
                 >
                     <div>
-                        <DaysEdit style={{ display: "inline-block", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
-                        <TimePicker style={{ display: "inline-block", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
+                        <DaysEdit style={{ float:"left", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
+                        <TimesEdit style={{  paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
                     </div>
                 </Dialog>
             </div>
@@ -71,7 +75,7 @@ class EditTask extends React.Component {
 function mapStateToProps(state) {
     return {
         isOpen: state.editTaskReducer.editingTask,
-        task: state.editTaskReducer.task
+        taskTypeDisplay: state.editTaskReducer.taskTypeDisplay
     }
 }
 

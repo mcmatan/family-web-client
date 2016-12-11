@@ -1,11 +1,12 @@
 import TaskType from "./TaskType";
+import Moment from "moment";
 
 class Task {
     uid = {};
     repeatOnDays = {}; //Dic day to times
-    taskType = {};
-    days = [];
-    times = [];
+    taskType = {}; //TaskType
+    days = []; // [sunday, monday...]
+    times = []; //Date()s
 
     constructor(serverModel) {
         this.uid = serverModel.uid;
@@ -21,7 +22,13 @@ class Task {
             this.days.push(key);
             times = repeatOnDays[key];
         }
-        this.times = times;
+
+        const datesAsTimes = times.map(function (time) {
+            const randomYear = "12-25-1995";
+            const date = Moment(time,"HH:mm'");
+            return date
+        }) ;
+        this.times = datesAsTimes;
         return myModelRepeatOnDays;
     }
 }

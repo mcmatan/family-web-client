@@ -21,7 +21,10 @@ class TimesPicker extends Component {
 
     render() {
         const times = this.props.dates.map((value, index) => {
-            const date = new Date(value);
+            let date = new Date(value);
+            if (!value) {
+                date = null;
+            }
             return <TimePicker
                 hintText="Enter time"
                 onChange={this.onChange.bind(this, index)}

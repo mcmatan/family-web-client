@@ -13,10 +13,6 @@ import {endEditingTask} from "../../core/actions/EditTasksActions";
  * You can also close this dialog by clicking outside the dialog, or with the 'Esc' key.
  */
 
-const customContentStyle = {
-    width: '80%',
-    maxWidth: 'none',
-};
 
 class EditTask extends React.Component {
     state = {
@@ -54,7 +50,6 @@ class EditTask extends React.Component {
         return (
             <div style={{height: 0}}>
                 <Dialog
-                    contentStyle={customContentStyle}
                     title={this.props.isOpen && this.props.taskTypeDisplay}
                     actions={actions}
                     modal={true}
@@ -64,7 +59,7 @@ class EditTask extends React.Component {
                 >
                     <div>
                         <DaysEdit style={{ float:"left", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
-                        <TimesEdit style={{  paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
+                        <TimesEdit style={{ float:"left", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
                     </div>
                 </Dialog>
             </div>

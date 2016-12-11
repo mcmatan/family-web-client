@@ -4,11 +4,10 @@ import App from "../ui/components/App.jsx";
 import LoginComponent from "../ui/components/LogInComponent.jsx";
 import Dashboard from "../ui/components/Dashboard.jsx";
 import AddTask from "../ui/components/AddTask.jsx";
-import {authServiceShared} from "./Services/AuthService.jsx";
+import {authServiceShared} from "./services/AuthService.jsx";
 
 
 const confirmAuth = (nextState, replace) => {
-
     if (!authServiceShared.isLoggedIn()) {
         replace({ pathname: '/', state: { nextPathname: nextState.location.pathname } });
     }

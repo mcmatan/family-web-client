@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import Avatar from "material-ui/Avatar";
 import TaskType from "../../model/TaskType";
-import {createTaskServiceShared} from "../../core/Services/CreateTaskService";
+import {createTaskServiceShared} from "../../core/services/CreateTaskService";
 import {connect} from "react-redux";
 
 

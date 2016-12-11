@@ -12,7 +12,7 @@ import {Router, browserHistory} from "react-router";
 import thunk from "redux-thunk";
 import DataBaseReducer from "./core/reducers/DataBaseReducer.jsx";
 import  TasksChangedReducer  from "./core/reducers/TasksChangedReducer";
-import {dataBaseShared} from "./core/Services/DataBase.jsx";
+import {dataBaseShared} from "./core/services/DataBase.jsx";
 
 const reducers = {
     authReducer: AuthReducer,
@@ -24,7 +24,7 @@ const reducers = {
 };
 const reducer = combineReducers(reducers);
 
-const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
 
 const store = createStore(
     reducer,
@@ -33,7 +33,7 @@ const store = createStore(
 );
 
 store.subscribe(()=>{
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+    console.log(store.getState());
 });
 
 dataBaseShared.setStore(store);

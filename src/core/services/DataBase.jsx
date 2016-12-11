@@ -45,6 +45,7 @@ class DataBase extends Component {
                 const values = keys.map(function(v) { return new Task(dic[v]); });
                 self.store.dispatch(tasksUpdated(values));
             } else {
+                self.store.dispatch(tasksUpdated([]));
                 console.log("No tasks in data base")
             }
         });

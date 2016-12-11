@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import TimePicker from 'material-ui/TimePicker';
-import {createTaskServiceShared} from '../../core/Services/CreateTaskService';
+import {createTaskServiceShared} from '../../core/services/CreateTaskService';
 import {connect} from "react-redux";
 
 const style = {

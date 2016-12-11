@@ -29,7 +29,7 @@ class TimesEdit extends Component {
                 date = null;
             }
             return (
-                <div>
+                <div key={index}>
                     <TimePicker
                         hintText="Enter time"
                         onChange={this.onChange.bind(this, index)}

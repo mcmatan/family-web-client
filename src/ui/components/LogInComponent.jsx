@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Field, reduxForm} from "redux-form";
-import {authServiceShared} from "../../core/Services/AuthService";
+import {authServiceShared} from "../../core/services/AuthService";
 import {connect} from "react-redux";
 import {bindActionCreators} from 'redux';
 import RaisedButton from 'material-ui/RaisedButton';

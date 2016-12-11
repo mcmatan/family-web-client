@@ -4,7 +4,8 @@ import TimesEdit from "../views/TimesEdit";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
 import {connect} from "react-redux";
-import {endEditingTask} from "../../core/actions/EditTasksActions";
+import {cancelEditingTask} from "../../core/actions/EditTasksActions";
+import {editTaskServiceShared} from "../../core/services/EditTaskService";
 
 /**
  * Dialog with action buttons. The actions are passed in as an array of React objects,
@@ -14,17 +15,18 @@ import {endEditingTask} from "../../core/actions/EditTasksActions";
  */
 
 
-class EditTask extends React.Component {
+class EditTask extends Component {
     state = {
         open: false,
     };
 
-    handleOpen = () => {
-        this.setState({open: true});
+    handleClose = () => {
+        this.props.dispatch(cancelEditingTask());
+        this.setState({open: false});
     };
 
-    handleClose = () => {
-        this.props.dispatch(endEditingTask());
+    handleUpdate = () => {
+        this.props.dispatch(editTaskServiceShared.updateTask(this.props.editTaskReducer));
         this.setState({open: false});
     };
 
@@ -36,16 +38,16 @@ class EditTask extends React.Component {
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
-                label="Submit"
+                label="Update"
                 primary={true}
                 keyboardFocused={true}
-                onTouchTap={this.handleClose}
+                onTouchTap={this.handleUpdate}
             />,
         ];
 
-            if (!this.props.isOpen) {
-                return <div />
-            }
+        if (!this.props.isOpen) {
+            return <div />
+        }
 
         return (
             <div style={{height: 0}}>
@@ -58,8 +60,20 @@ class EditTask extends React.Component {
                     autoScrollBodyContent={true}
                 >
                     <div>
-                        <DaysEdit style={{ float:"left", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
-                        <TimesEdit style={{ float:"left", paddingLeft: 30, paddingTop: 30, paddingBottom: 30, paddingRight: 30}}/>
+                        <DaysEdit style={{
+                            float: "left",
+                            paddingLeft: 30,
+                            paddingTop: 30,
+                            paddingBottom: 30,
+                            paddingRight: 30
+                        }}/>
+                        <TimesEdit style={{
+                            float: "left",
+                            paddingLeft: 30,
+                            paddingTop: 30,
+                            paddingBottom: 30,
+                            paddingRight: 30
+                        }}/>
                     </div>
                 </Dialog>
             </div>
@@ -69,6 +83,7 @@ class EditTask extends React.Component {
 
 function mapStateToProps(state) {
     return {
+        editTaskReducer: state.editTaskReducer,
         isOpen: state.editTaskReducer.editingTask,
         taskTypeDisplay: state.editTaskReducer.taskTypeDisplay
     }

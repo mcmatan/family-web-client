@@ -47,9 +47,11 @@ const TaskType = {
     serialize(serverTaskModel) {
         const allTasksTypes = this.all();
         for (const i in allTasksTypes) {
-            const taskType = allTasksTypes[i];
-            if (taskType.key == serverTaskModel.kTaskType) {
-                return taskType;
+            if (i) {
+                const taskType = allTasksTypes[i];
+                if (taskType.key === serverTaskModel.kTaskType) {
+                    return taskType;
+                }
             }
         }
         console.log("No server model matches task type")

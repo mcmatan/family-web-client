@@ -1,8 +1,9 @@
-import {EDIT_TASK_START_EDITING, EDIT_TASK_END_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY, EDIT_TASK_ADD_TIME,
+import {EDIT_TASK_START_EDITING, EDIT_TASK_CANCEL_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY, EDIT_TASK_ADD_TIME,
     EDIT_TASK_REMOVE_TIME
     , EDIT_TASK_DATE_CHANGED_AT_INDEX
+    , EDIT_TASK_END_EDITING
 } from "../actions/ActionTypes";
-const EditTaskReducer = (state = {editingTask: true}, action) => {
+const EditTaskReducer = (state = {editingTask: false}, action) => {
     switch (action.type) {
         case EDIT_TASK_START_EDITING:
             return Object.assign({}, state, {
@@ -10,12 +11,21 @@ const EditTaskReducer = (state = {editingTask: true}, action) => {
                 taskTypeDisplay: action.payload.taskType.display,
                 times: action.payload.times,
                 days: action.payload.days,
+                taskBeforeUpdate: action.payload,
             });
-        case EDIT_TASK_END_EDITING:
+        case EDIT_TASK_CANCEL_EDITING:
             return Object.assign({}, state, {
                 editingTask: false,
                 times: {},
                 days: {},
+            });
+        case EDIT_TASK_END_EDITING:
+            return Object.assign({}, state, {
+                editingTask: false,
+                taskTypeDisplay: {},
+                times: {},
+                days: {},
+                taskBeforeUpdate: {}
             });
         case EDIT_TASK_REMOVE_DAY:
             const daysAfter = state.days.filter(function (day) {
@@ -30,16 +40,13 @@ const EditTaskReducer = (state = {editingTask: true}, action) => {
                 days: after
             });
         case EDIT_TASK_REMOVE_TIME:
-            debugger;
             const timesAfterFilter = state.times.filter(function (time) {
                return (time !== action.payload);
             });
-            debugger;
             return Object.assign({}, state, {
                 times: timesAfterFilter
             });
         case EDIT_TASK_ADD_TIME:
-            debugger;
             return Object.assign({}, state, {
                 times: [...state.times, action.payload]
             });

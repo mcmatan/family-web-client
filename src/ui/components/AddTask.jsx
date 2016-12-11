@@ -11,7 +11,7 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import {connect} from "react-redux";
-import {createTaskServiceShared} from "../../core/Services/CreateTaskService";
+import {createTaskServiceShared} from "../../core/services/CreateTaskService";
 
 /**
  * Horizontal steppers are ideal when the contents of one step depend on an earlier step.

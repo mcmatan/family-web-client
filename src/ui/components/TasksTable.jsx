@@ -3,9 +3,7 @@ import Subheader from "material-ui/Subheader";
 import Avatar from "material-ui/Avatar";
 import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
-import Divider from 'material-ui/Divider';
-import DayPicker from './DayPicker';
-import EditTask from './EditTask';
+import EditTask from "./EditTask";
 import {startEditingTask} from "../../core/actions/EditTasksActions";
 
 let SelectableList = makeSelectable(List);
@@ -35,11 +33,15 @@ class TasksTable extends Component {
     };
 
     children = (task, index) => {
-        return (<div key={task.uid}><Avatar src={task.taskType.src} />
+        return (<div key={task.uid}><Avatar src={task.taskType.src}/>
         </div>);
     };
 
     render() {
+        if (!this.props.tasks || this.props.tasks.length == 0) {
+            return (<div>No Tasks</div>)
+        }
+
         const self = this;
         const rows = this.props.tasks.map(function (task, index) {
             return (

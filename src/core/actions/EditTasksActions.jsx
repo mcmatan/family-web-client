@@ -1,6 +1,7 @@
-import {EDIT_TASK_START_EDITING, EDIT_TASK_END_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY, EDIT_TASK_ADD_TIME,
+import {EDIT_TASK_START_EDITING, EDIT_TASK_CANCEL_EDITING, EDIT_TASK_REMOVE_DAY, EDIT_TASK_ADD_DAY,
     EDIT_TASK_REMOVE_TIME
     , EDIT_TASK_DATE_CHANGED_AT_INDEX
+    , EDIT_TASK_END_EDITING
 } from "./ActionTypes";
 export function startEditingTask(task) {
     return {
@@ -9,9 +10,9 @@ export function startEditingTask(task) {
     }
 }
 
-export function endEditingTask() {
+export function cancelEditingTask() {
     return {
-        type: EDIT_TASK_END_EDITING
+        type: EDIT_TASK_CANCEL_EDITING
     }
 }
 
@@ -44,3 +45,8 @@ export function removeTime(date) {
     }
 }
 
+export function endEditing() {
+    return {
+        type: EDIT_TASK_END_EDITING
+    }
+}

@@ -33,6 +33,7 @@ class AuthService {
                 dataBaseShared.setUserLoggedIn(user);
                 dispatch(signInSuccessAndRoute(user));
             }).catch(function (error) {
+                debugger;
                 dataBaseShared.setUserLoggedOut();
                 dispatch(signInError(error));
             });

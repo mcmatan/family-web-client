@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import Days from "../../model/Days";
 import {connect} from "react-redux";
-import {createTaskServiceShared} from "../../core/Services/CreateTaskService";
+import {createTaskServiceShared} from "../../core/services/CreateTaskService";
 
 const styles = {
     block: {

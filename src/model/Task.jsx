@@ -18,13 +18,14 @@ class Task {
         const myModelRepeatOnDays = {};
         let times = [];
         for (const key in repeatOnDays) {
-            myModelRepeatOnDays[key] = repeatOnDays[key];
-            this.days.push(key);
-            times = repeatOnDays[key];
+            if (repeatOnDays[key]) {
+                myModelRepeatOnDays[key] = repeatOnDays[key];
+                this.days.push(key);
+                times = repeatOnDays[key];
+            }
         }
 
         const datesAsTimes = times.map(function (time) {
-            const randomYear = "12-25-1995";
             const date = Moment(time,"HH:mm'");
             return date
         }) ;

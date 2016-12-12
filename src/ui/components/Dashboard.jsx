@@ -4,6 +4,7 @@ import BottomTabBar from './BottomTabBar'
 import {browserHistory} from "react-router";
 import TasksTable from "./TasksTable";
 import TodayComponent from "./TodayComponent";
+import MapContainer from "./MapContainer";
 import {connect} from "react-redux";
 
 class Dashboard extends Component {
@@ -23,7 +24,7 @@ class Dashboard extends Component {
                 showingComponent = <TodayComponent />;
                 break;
             default:
-                showingComponent = <div>Work in progress...</div>
+                showingComponent = <MapContainer />
         }
 
 

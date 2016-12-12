@@ -1,38 +1,23 @@
 import React, {Component} from "react";
-import Subheader from "material-ui/Subheader";
-import Avatar from "material-ui/Avatar";
 import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import EditTask from "./EditTask";
-import {startEditingTask} from "../../core/actions/EditTasksActions";
 import moment from "moment";
 import {blueDefault} from "../../model/Colors";
+import {editTaskServiceShared} from "../../core/services/EditTaskService";
 
 let SelectableList = makeSelectable(List);
-
-function wrapState(ComposedComponent) {
-    return class SelectableList extends Component {
-        render() {
-            return (
-                <ComposedComponent
-                    value={this.props.selectedValue}
-                    onChange={ () => {
-                    }}
-                >
-                    {this.props.children}
-                </ComposedComponent>
-            );
-        }
-    };
-}
-
-SelectableList = wrapState(SelectableList);
 
 class TodayComponent extends Component {
 
     state = {
         selectedIndex: -1
     };
+
+    constructor() {
+        super();
+        this.onSelect = this.onSelect.bind(this);
+    }
 
     children = (scheduledTask, index) => {
         return (<div key={scheduledTask.uid} style={{display: "flex", justifyContent: "center"}}>
@@ -69,31 +54,25 @@ class TodayComponent extends Component {
                     key={scheduledTask.uid}
                     open={self.state.selectedIndex === index}
                     value={index}
-                    onTouchTap={self.onSelect.bind(this, index)}
+                    onTouchTap={self.onSelect.bind(self, index)}
                     children={self.children(scheduledTask, index)}
                 />
             )
         });
-
         return (
             <div>
                 <EditTask />
-                <SelectableList selectedValue={this.state.selectedIndex} onSelect={self.onSelect}>
+                <List >
                     {rows}
-                </SelectableList>
+                </List>
             </div>
         );
     }
 
     onSelect = (index, value) => {
-        this.props.dispatch(startEditingTask(this.props.scheduledTasks[index]));
+        this.props.dispatch(editTaskServiceShared.startEditingScheduledTask(this.props.scheduledTasks[index]));
     };
 
-    setSelectedIndex(index) {
-        this.setState(
-            {selectedIndex: index}
-        );
-    }
 }
 
 function mapStateToProps(state) {

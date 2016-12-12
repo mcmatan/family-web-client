@@ -48,6 +48,17 @@ class DataBase extends Component {
         this.tasksRef.child(task.uid).remove();
     }
 
+    getTaskForId(uid) {
+
+        const tasks = this.store.getState().tasksChangedReducer.tasks;
+
+        const taskWithSameUid = tasks.filter(function (task) {
+            return (task.uid === uid);
+        });
+
+        return taskWithSameUid[0];
+    }
+
     listenToTasksChanges() {
         const self = this;
         this.tasksRef.on('value', function (snapshot) {
@@ -84,7 +95,7 @@ class DataBase extends Component {
                 allSchedulesTasks = allSchedulesTasks.concat(schedulesTasks);
             }
         }
-        allSchedulesTasks.sort(function(a,b){
+        allSchedulesTasks.sort(function (a, b) {
             // Turn your strings into dates, and then subtract them
             // to get a value that is either negative, positive, or zero.
             return new Date(b.date) - new Date(a.date);

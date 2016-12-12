@@ -1,10 +1,18 @@
 import {Component} from 'react';
 import Moment from "moment";
-import {endEditing, cancelEditingTask} from "../actions/EditTasksActions";
+import {endEditing, cancelEditingTask, startEditingTask} from "../actions/EditTasksActions";
 import Days from "../../model/Days";
 import {dataBaseShared} from "./DataBase";
 
 class EditTaskService extends Component {
+
+    startEditingScheduledTask(scheduledTask) {
+        return dispatch => {
+            const uid = scheduledTask.uid;
+            const task = dataBaseShared.getTaskForId(uid);
+            dispatch(startEditingTask(task));
+        };
+    }
 
     removeTask(task) {
         return dispatch => {

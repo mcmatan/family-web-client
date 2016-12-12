@@ -51,7 +51,7 @@ class TodayComponent extends Component {
         const rows = this.props.scheduledTasks.map(function (scheduledTask, index) {
             return (
                 <ListItem
-                    key={scheduledTask.uid}
+                    key={scheduledTask.uid + scheduledTask.date}
                     open={self.state.selectedIndex === index}
                     value={index}
                     onTouchTap={self.onSelect.bind(self, index)}

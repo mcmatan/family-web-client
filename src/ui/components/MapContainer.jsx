@@ -6,6 +6,8 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 import MyGreatPlace from './my_great_place.jsx';
 
+const API_KEY = "AIzaSyBFC8qD5O4t0bBHredcy1yTxJnx12VkfB8";
+
 export default class MapContainer extends Component {
     static propTypes = {
         center: PropTypes.array,
@@ -14,9 +16,9 @@ export default class MapContainer extends Component {
     };
 
     static defaultProps = {
-        center: [59.938043, 30.337157],
-        zoom: 9,
-        greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+        center: [52.508030, 13.45989],
+        zoom: 12,
+        greatPlaceCoords: {lat: 52.508030, lng: 13.45989}
     };
 
     shouldComponentUpdate = shouldPureComponentUpdate;
@@ -27,13 +29,18 @@ export default class MapContainer extends Component {
 
     render() {
         return (
-            <GoogleMap style={{height: "100%"}}
-                // apiKey={YOUR_GOOGLE_MAP_API_KEY} // set if you need stats etc ...
-                center={this.props.center}
-                zoom={this.props.zoom}>
-                <MyGreatPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
-                <MyGreatPlace {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
-            </GoogleMap>
+            <div style={{height: "100%"}}>
+                <GoogleMap style={{height: "100%"}}
+                           bootstrapURLKeys={{
+                               key: API_KEY,
+                               language: 'en'
+                           }}
+                           center={this.props.center}
+                           zoom={this.props.zoom}>
+                    <MyGreatPlace lat={52.508030} lng={13.45989} text={'A'} /* Kreyser Avrora */ />
+                    <MyGreatPlace {...this.props.greatPlaceCoords} text={'Patient'} /* road circle */ />
+                </GoogleMap>
+            </div>
         );
     }
 }

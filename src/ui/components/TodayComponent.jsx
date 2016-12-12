@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 import {List, ListItem, makeSelectable} from "material-ui/List";
 import EditTask from "./EditTask";
 import {startEditingTask} from "../../core/actions/EditTasksActions";
+import moment from "moment";
+import {blueDefault} from "../../model/Colors";
 
 let SelectableList = makeSelectable(List);
 
@@ -26,34 +28,49 @@ function wrapState(ComposedComponent) {
 
 SelectableList = wrapState(SelectableList);
 
-class TasksTable extends Component {
+class TodayComponent extends Component {
 
     state = {
         selectedIndex: -1
     };
 
-    children = (task, index) => {
-        return (<div key={task.uid}><Avatar src={task.taskType.src}/>
+    children = (scheduledTask, index) => {
+        return (<div key={scheduledTask.uid} style={{display: "flex", justifyContent: "center"}}>
+            <div style={{display: "flex", justifyContent: "flexStart"}}>
+                <div style={{margin: "20px", flexDirection: "column"}}>
+                    <div style={{fontSize: "30px", color: blueDefault}}>
+                        {moment(scheduledTask.date).format("HH:mm")}
+                    </div>
+                </div>
+                <div style={{margin: "20px", flexDirection: "column", display: "flex"}}>
+                    <div style={{fontSize: "20px", width: "150px"}}>
+                        {scheduledTask.taskType.display}
+                    </div>
+                </div>
+            </div>
         </div>);
     };
 
+    /*
+     <div style={{margin: "20px", flexDirection: "column", display: "flex"}}>
+     <Avatar src={scheduledTask.taskType.src}/>
+     </div>
+     */
+
     render() {
-        if (!this.props.tasks || this.props.tasks.length == 0) {
+        if (!this.props.scheduledTasks || this.props.scheduledTasks.length == 0) {
             return (<div>No Tasks</div>)
         }
 
         const self = this;
-        const rows = this.props.tasks.map(function (task, index) {
+        const rows = this.props.scheduledTasks.map(function (scheduledTask, index) {
             return (
                 <ListItem
-                    primaryText={task.taskType.display}
-                    key={task.uid}
-                    secondaryTextLines={2}
+                    key={scheduledTask.uid}
                     open={self.state.selectedIndex === index}
                     value={index}
                     onTouchTap={self.onSelect.bind(this, index)}
-                    style={{textAlign: "center"}}
-                    children={self.children(task, index)}
+                    children={self.children(scheduledTask, index)}
                 />
             )
         });
@@ -69,7 +86,7 @@ class TasksTable extends Component {
     }
 
     onSelect = (index, value) => {
-        this.props.dispatch(startEditingTask(this.props.tasks[index]));
+        this.props.dispatch(startEditingTask(this.props.scheduledTasks[index]));
     };
 
     setSelectedIndex(index) {
@@ -80,8 +97,7 @@ class TasksTable extends Component {
 }
 
 function mapStateToProps(state) {
-    return {tasks: state.tasksChangedReducer.tasks}
+    return {scheduledTasks: state.scheduledTasksReducer.allScheduledTasks}
 }
 
-export default connect(mapStateToProps)(TasksTable);
-
+export default connect(mapStateToProps)(TodayComponent);

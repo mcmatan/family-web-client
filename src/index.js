@@ -7,6 +7,8 @@ import {reducer as formReducer} from "redux-form";
 import AuthReducer from "./core/reducers/AuthReducer.jsx";
 import EditTaskReducer from "./core/reducers/EditTaskReducer";
 import CreateTaskReducer from "./core/reducers/CreateTaskReducer.jsx";
+import ScheduledTasksReducer from "./core/reducers/ScheduledTasksReducer";
+import ApplicationUIStateReducer from "./core/reducers/ApplicationUIStateReducer";
 import routes from "./core/routes.jsx";
 import {Router, browserHistory} from "react-router";
 import thunk from "redux-thunk";
@@ -20,6 +22,8 @@ const reducers = {
     dataBaseReducer: DataBaseReducer,
     tasksChangedReducer: TasksChangedReducer,
     editTaskReducer: EditTaskReducer,
+    scheduledTasksReducer: ScheduledTasksReducer,
+    applicationUIStateReducer: ApplicationUIStateReducer,
     form: formReducer
 };
 const reducer = combineReducers(reducers);

@@ -7,6 +7,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import NavigationBar from "../views/NavigationBar.jsx";
 import {authServiceShared} from "../../core/services/AuthService.jsx";
+import {blueDefault} from "../../model/Colors";
 injectTapEventPlugin();
 
 
@@ -34,7 +35,7 @@ class App extends Component {
     render() {
         const muiTheme = getMuiTheme({
             palette: {
-                primary1Color: "#6d9de0",
+                primary1Color: blueDefault,
             },
         });
 

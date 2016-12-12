@@ -2,11 +2,13 @@ import React, {Component} from "react";
 import {BottomNavigation, BottomNavigationItem} from "material-ui/BottomNavigation";
 import Paper from "material-ui/Paper";
 import IconLocationOn from "material-ui/svg-icons/communication/location-on";
-import ActionHome from "material-ui/svg-icons/action/home";
-import Settings from "material-ui/svg-icons/action/settings";
+import Accessibility from "material-ui/svg-icons/action/accessibility";
+import ViewWeek from "material-ui/svg-icons/action/view-week";
+import {connect} from "react-redux";
+import {dashboardTabBarChanged} from "../../core/actions/ApplicationUIStateActions";
 
-const dashboardIcon = <ActionHome />;
-const settingsIcon = <Settings />;
+const dashboardIcon = <Accessibility  />;
+const settingsIcon = <ViewWeek />;
 const nearbyIcon = <IconLocationOn />;
 
 /**
@@ -15,23 +17,22 @@ const nearbyIcon = <IconLocationOn />;
  * state (for instance, by the URL).
  */
 class BottomTabBar extends Component {
-    state = {
-        selectedIndex: 0,
-    };
 
-    select = (index) => this.setState({selectedIndex: index});
+    select = (index) =>  {
+        this.props.dispatch(dashboardTabBarChanged(index));
+    };
 
     render() {
         return (
             <Paper zDepth={1} style={{ position: "fixed", bottom: 0 ,left:0, right: 0}}>
-                <BottomNavigation selectedIndex={this.state.selectedIndex}>
+                <BottomNavigation selectedIndex={this.props.selectedIndex}>
                     <BottomNavigationItem
-                        label="Dashboard"
+                        label="Tasks"
                         icon={dashboardIcon}
                         onTouchTap={() => this.select(0)}
                     />
                     <BottomNavigationItem
-                        label="Settigs"
+                        label="Scheduled for today"
                         icon={settingsIcon}
                         onTouchTap={() => this.select(1)}
                     />
@@ -46,4 +47,8 @@ class BottomTabBar extends Component {
     }
 }
 
-export default BottomTabBar;
+function mapStateToProps(state) {
+    return {selectedIndex: state.applicationUIStateReducer.dashboardTabBarIndex};
+};
+
+export default connect(mapStateToProps)(BottomTabBar);

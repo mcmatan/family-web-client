@@ -24,8 +24,8 @@
       <file leaf-file-name="DataBase.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/services/DataBase.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -612,12 +612,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481228595486</updated>
       <workItem from="1481228597731" duration="2472000" />
-      <workItem from="1481236315917" duration="50991000" />
+      <workItem from="1481236315917" duration="51065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53463000" />
+    <option name="totallyTimeSpent" value="53537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-151" y="-1056" width="1823" height="1047" extended-state="0" />
@@ -1091,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/services/DataBase.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
           <folding />
         </state>
       </provider>

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35bd12ed-4854-4224-8099-f20e20c06e76" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/services/DataBase.jsx" afterPath="$PROJECT_DIR$/src/core/services/DataBase.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/services/EditTaskService.jsx" afterPath="$PROJECT_DIR$/src/core/services/EditTaskService.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/TodayComponent.jsx" afterPath="$PROJECT_DIR$/src/ui/components/TodayComponent.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/views/Spinner.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" afterPath="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataBase.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataBase.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/services/DataBase.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="521">
+              <caret line="74" column="41" lean-forward="false" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -64,10 +64,22 @@
       <file leaf-file-name="TasksTable.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/components/TasksTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="71" column="38" lean-forward="false" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+            <state relative-caret-position="435">
+              <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Spinner.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ui/views/Spinner.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="95" lean-forward="false" selection-start-line="4" selection-start-column="95" selection-end-line="4" selection-end-column="95" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +88,8 @@
       <file leaf-file-name="TasksChangedReducer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/reducers/TasksChangedReducer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="75">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -112,18 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
               <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BottomTabBar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/components/BottomTabBar.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="50" column="81" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="81" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -172,9 +172,9 @@
       <find>300</find>
       <find>applicationUIStateReducer</find>
       <find>dashboardTabBarIndex</find>
-      <find>dispa</find>
       <find>startEditingScheduledTask</find>
       <find>allScheduledTasks</find>
+      <find>dispa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/core/reducers/ScheduledTasksReducer.jsx" />
         <option value="$PROJECT_DIR$/src/core/actions/SchedulesTasksActions.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/Today.jsx" />
-        <option value="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
         <option value="$PROJECT_DIR$/src/model/Colors.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/App.jsx" />
         <option value="$PROJECT_DIR$/src/core/actions/ActionTypes.jsx" />
@@ -225,6 +224,8 @@
         <option value="$PROJECT_DIR$/src/core/services/EditTaskService.jsx" />
         <option value="$PROJECT_DIR$/src/ui/components/TodayComponent.jsx" />
         <option value="$PROJECT_DIR$/src/core/services/DataBase.jsx" />
+        <option value="$PROJECT_DIR$/src/ui/components/TasksTable.jsx" />
+        <option value="$PROJECT_DIR$/src/ui/views/Spinner.jsx" />
       </list>
     </option>
   </component>
@@ -678,11 +679,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70360000" />
+    <option name="totallyTimeSpent" value="71296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-226" y="-1057" width="1848" height="1028" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19480519" sideWeight="0.4950249" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -716,13 +717,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/Table/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/views/MobileTearSheet.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -1075,16 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/components/TasksTable.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="71" column="38" lean-forward="false" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/actions/EditTasksActions.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1125,6 +1109,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/services/DataBase.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="74" column="41" lean-forward="false" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/actions/TasksChangedActions.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1135,18 +1129,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/reducers/TasksChangedReducer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/services/DataBase.jsx">
+    <entry file="file://$PROJECT_DIR$/src/ui/components/TasksTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="435">
+          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/views/Spinner.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="95" lean-forward="false" selection-start-line="4" selection-start-column="95" selection-end-line="4" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

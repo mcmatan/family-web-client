@@ -2,6 +2,7 @@ import {firebaseApp} from "../firebase/firebase";
 import {Component} from "react";
 import {tasksUpdated} from "../actions/TasksChangedActions";
 import Task from "../../model/Task";
+import moment from "moment";
 
 const firebaseDb = firebaseApp.database();
 
@@ -53,6 +54,11 @@ class DataBase extends Component {
                 console.log("No tasks in data base")
             }
         });
+    }
+
+    updateNextTasks(tasks) {
+        const todayDayString = moment().format('E');
+        
     }
 
 }

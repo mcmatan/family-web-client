@@ -44,7 +44,7 @@ class AddTask extends React.Component {
             case 1:
                 return 'Which days should it repeat?';
             case 2:
-                return 'On what time should it notify?';
+                return 'At what time should it notify?';
             default:
                 return 'Uploading task...';
         }

@@ -29,8 +29,8 @@ class Dashboard extends Component {
 
 
         return (
-        <div style={{width:"100%",  height: 300}}>
-            <div style={{height: "100%", display: "inline-block" ,width:"100%"}}>
+        <div>
+            <div style={{height: "100%", position: "relative", bottom: "80px" ,width:"100%"}} className="DashboardContentContainer">
                 {showingComponent}
             </div>
             <FloatingButton onClick={this.onFloatingButtonClick} />

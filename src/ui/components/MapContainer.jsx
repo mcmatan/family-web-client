@@ -29,8 +29,8 @@ export default class MapContainer extends Component {
 
     render() {
         return (
-            <div style={{height: "100%"}}>
-                <GoogleMap style={{height: "100%"}}
+            <div  style={{padding: "-8px", height: "750px"}}>
+                <GoogleMap className="GoogleMap"
                            bootstrapURLKeys={{
                                key: API_KEY,
                                language: 'en'

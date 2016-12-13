@@ -60,9 +60,9 @@ class TodayComponent extends Component {
             )
         });
         return (
-            <div>
+            <div className="todayListContainer">
                 <EditTask />
-                <List >
+                <List className="todayList">
                     {rows}
                 </List>
             </div>
